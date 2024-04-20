@@ -81,7 +81,7 @@ class ChatEventView: UIView, UITableViewDataSource, UITableViewDelegate {
         var cell = PresentationsPlayTableViewCell.defaultCell(title: nil)
         switch rows[indexPath.item] {
         case .switchWithIconCell:
-            cell = PresentationsPlayTableViewCell.switchCell(title: "Онлайн", icon: AppImage.FigureTwo.uiImage, iconColor: .hexFFDD00, isOn: isOffline, tag: indexPath.item, target: self, action: #selector(onSwitchOffline))
+            cell = PresentationsPlayTableViewCell.switchCell(title: "Онлайн", icon: AppImage.figureTwo.uiImage, iconColor: .hexFFDD00, isOn: isOffline, tag: indexPath.item, target: self, action: #selector(onSwitchOffline))
         case .stepperCell:
             let title = String.Chat.timeIntervalString.format(interval)
             cell = PresentationsPlayTableViewCell.stepperCell(

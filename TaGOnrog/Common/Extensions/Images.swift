@@ -18,6 +18,7 @@ enum AppImage: String {
     case messageFill = "message.fill"
     case actionsPlus = "plus"
     case presentationsMinus = "minus"
+    case google
     
     //Dating
     case likeImage
@@ -34,7 +35,16 @@ enum AppImage: String {
     case aiChatReceivedMessageTail
     case aiChatSentMessageTail
     case calendarBadgePlus = "calendar.badge.plus"
-    case FigureTwo = "figure.2"
+    case calendar = "calendar"
+    case figureTwo = "figure.2"
+    
+    //Profile
+    case profileBlur
+    case saveImage = "square.and.arrow.down.on.square.fill"
+    case demoImageOne
+    case demoImageTwo
+    case imageVector
+    case imageVector2
     
     var uiImage: UIImage? {
         return UIImage(systemName: rawValue) ?? UIImage(named: rawValue)

@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.930995595343-7rlfqftkn2956g2u6olkvnic9bhvi4oq</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFProText-Regular.ttf</string>
@@ -9,7 +20,7 @@
 		<string>SFProText-Semibold.otf</string>
 		<string>SFProText-Bold.otf</string>
 	</array>
-    <key>UIUserInterfaceStyle</key>
-    <string>Light</string>
+	<key>UIApplicationSceneManifest</key>
+	<false/>
 </dict>
 </plist>

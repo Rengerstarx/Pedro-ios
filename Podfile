@@ -15,6 +15,10 @@ target 'TaGOnrog' do
   pod 'Parchment', '3.2.0'
   pod 'Pulsator', '0.6.0'
   pod 'UITextView+Placeholder', '1.4.0'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseAnalytics'
+  pod 'GoogleSignIn'
 end
 
 post_install do |installer|

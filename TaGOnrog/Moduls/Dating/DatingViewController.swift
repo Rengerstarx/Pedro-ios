@@ -15,6 +15,11 @@ class DatingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if true {
+            let viewController = RegistrationViewController()
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true, completion: nil)
+        }
         setTitles()
         setupViews()
         setupLayouts()

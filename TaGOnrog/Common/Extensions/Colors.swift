@@ -26,6 +26,7 @@ extension UIColor {
     static let appSystemOrange = UIColor.systemOrange
     
     //Custom Colors
+    static let hexF2F2F7 = UIColor(named: "#F2F2F7")!
     static let hexF9F9F9 = UIColor(named: "#F9F9F9")!
     static let hexFFDD00 = UIColor(named: "#FFDD00")!
     static let hex3C3C43 = UIColor(named: "#3C3C43")!

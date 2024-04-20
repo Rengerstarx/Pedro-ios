@@ -130,4 +130,15 @@ class ViewsFactory {
         )
     }
     
+    class func tagView(color: UIColor, text: String) -> UIView {
+        let view = UIView()
+        view.layer.cornerRadius = 3
+        view.backgroundColor = color
+        let lable = ViewsFactory.defaultLabel(lines: 1, textColor: .appBlack, font: .sFProTextBold(ofSize: 12))
+        view.addSubview(lable)
+        lable.text = text
+        lable.edgesToSuperview(insets: .uniform(5))
+        return view
+    }
+    
 }
