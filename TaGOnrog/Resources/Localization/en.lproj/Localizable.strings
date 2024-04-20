@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  TaGOnrog
+
+  Created by Сергей Бекезин on 19.04.2024.
+  
+*/
+
+//Root
+"DatingTitle" = "Мэтч";
+"ChatTitle" = "Чаты";
+"ProfileTitle" = "Профиль";
+"ChatEnterYourQuestionTitle" = "Напишите свое сообщение";
+"TimeIntervalString" = "Продолжительность: %dмин";

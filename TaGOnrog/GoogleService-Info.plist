@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>316572324911-rs643tsuo6gt0389m71p9o2c6cr6tgs5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.316572324911-rs643tsuo6gt0389m71p9o2c6cr6tgs5</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>316572324911-0qo277lg3fpgv1oedam85848p0f60pod.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0pyWPJMaK_K-xuHJJm4-VsmDhwDaMbk0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>316572324911</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>BananasSolution.TaGOnrog</string>
+	<key>PROJECT_ID</key>
+	<string>taganrog-75b99</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taganrog-75b99.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:316572324911:ios:666c0a056b29ca7c54e2da</string>
+	<key>DATABASE_URL</key>
+	<string>https://taganrog-75b99-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
