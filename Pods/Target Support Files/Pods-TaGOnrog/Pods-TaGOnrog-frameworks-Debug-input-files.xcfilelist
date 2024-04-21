@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-TaGOnrog/Pods-TaGOnrog-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AKAlertController/AKAlertController.framework
 ${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework

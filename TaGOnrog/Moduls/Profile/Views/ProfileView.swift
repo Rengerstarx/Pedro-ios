@@ -44,7 +44,7 @@ class ProfileView: UIView {
         while i < 4 {
             if i < model.tags.count {
                 let tag = model.tags[i]
-                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag)
+                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag?.name ?? "")
                 tagElement.height(25)
                 tagsView.addArrangedSubview(tagElement)
             }
@@ -53,7 +53,7 @@ class ProfileView: UIView {
         while i < 7 {
             if i < model.tags.count {
                 let tag = model.tags[i]
-                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag)
+                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag?.name ?? "")
                 tagElement.height(25)
                 tagsView2.addArrangedSubview(tagElement)
             }

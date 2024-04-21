@@ -15,19 +15,19 @@ struct ProfileModel {
     let lastName: String
     let bd: String
     let vacation: String
-    let tags: [String]
+    let tags: [Position?]
     let aboutMe: String
     let photo: URL
     
-    init(username: String, email: String, firstName: String, lastName: String, bd: String, vacation: String, tags: [String], aboutMe: String, photo: URL) {
-        self.username = username
-        self.email = email
-        self.firstName = firstName
-        self.lastName = lastName
-        self.bd = bd
-        self.vacation = vacation
-        self.tags = tags
-        self.aboutMe = aboutMe
+    init(username: String?, email: String?, firstName: String?, lastName: String?, bd: String?, vacation: String?, tags: [Position?], aboutMe: String?, photo: URL) {
+        self.username = username ?? ""
+        self.email = email ?? ""
+        self.firstName = firstName ?? ""
+        self.lastName = lastName ?? ""
+        self.bd = bd ?? ""
+        self.vacation = vacation ?? ""
+        self.tags = tags ?? []
+        self.aboutMe = aboutMe ?? ""
         self.photo = photo
     }
     

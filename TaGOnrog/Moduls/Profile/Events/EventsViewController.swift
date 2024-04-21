@@ -8,6 +8,7 @@
 import TinyConstraints
 import Parchment
 import Combine
+import AKAlertController
 
 class EventsViewController: UIViewController {
         
@@ -16,23 +17,17 @@ class EventsViewController: UIViewController {
     private let parentStackView = ViewsFactory.defaultStackView(axis: .vertical, spacing: 0)
     
     private let questionsCategories: [([EventsCategoryItem], String)] = [([
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06")
+        EventsCategoryItem(title: "Встреча Настей", description: "Встреча запланирована на 19:30 28.04"),
+        EventsCategoryItem(title: "Встреча Давидом", description: "Встреча запланирована на 20:00 04.05"),
+        EventsCategoryItem(title: "Встреча Альбиной", description: "Встреча запланирована на 21:30 14.05"),
+        EventsCategoryItem(title: "Встреча Лизой", description: "Встреча запланирована на 18:30 14.05"),
+        EventsCategoryItem(title: "Встреча Кириллом", description: "Встреча запланирована на 19:00 14.05")
     ], "Будущие"), ([
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06"),
-        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча запланирована на 10:00 14.06")
+        EventsCategoryItem(title: "Встреча Антоном", description: "Встреча была в 18:00 01.03"),
+        EventsCategoryItem(title: "Встреча Женей", description: "Встреча была в 20:00 04.03"),
+        EventsCategoryItem(title: "Встреча Викой", description: "Встреча была в 21:00 24.03"),
+        EventsCategoryItem(title: "Встреча Сергеем", description: "Встреча была в 19:35 11.04"),
+        EventsCategoryItem(title: "Встреча Сашей", description: "Встреча была в 20:00 14.04")
     ], "Прошедшие")]
     
     
@@ -83,11 +78,12 @@ class EventsViewController: UIViewController {
     }
     
     private func setTitles() {
-        navigationItem.title = "Мои мероприятия"
+        navigationItem.title = "Мои встречи"
     }
     
     private func setupViews() {
         
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         
         view.backgroundColor = .hexF2F2F7

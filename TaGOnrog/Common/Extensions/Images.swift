@@ -45,6 +45,9 @@ enum AppImage: String {
     case demoImageTwo
     case imageVector
     case imageVector2
+    case skuf1
+    case skuf2
+    case like
     
     var uiImage: UIImage? {
         return UIImage(systemName: rawValue) ?? UIImage(named: rawValue)

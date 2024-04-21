@@ -115,11 +115,11 @@ class ChatReceivedMessageTableViewCell: UITableViewCell {
         messageView.addSubview(messageTextLabel)
         messageTextLabel.edgesToSuperview(insets: TinyEdgeInsets(top: 8, left: 12, bottom: 8, right: 12))
         
-        [copyButton].forEach { buttonsStackView.addArrangedSubview($0) }
-        [copyButton].forEach { $0.aspectRatio(1) }
-        buttonsStackView.height(buttonHeight)
+//        [copyButton].forEach { buttonsStackView.addArrangedSubview($0) }
+//        [copyButton].forEach { $0.aspectRatio(1) }
+//        buttonsStackView.height(buttonHeight)
         
-        [bodyView, buttonsStackView].forEach { messageStackView.addArrangedSubview($0) }
+        [bodyView].forEach { messageStackView.addArrangedSubview($0) }
         bodyView.leadingToSuperview()
         
         [avatarImageViewWrapper, messageStackView].forEach { parentStackView.addArrangedSubview($0) }

@@ -17,6 +17,8 @@ class AllChatCollectionViewCell: UICollectionViewCell {
     private let line = ViewsFactory.separatorLine(color: .hexFFDD00, vertical: false, thickness: 1)
     private let photoView = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit)
     
+    var handler: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -61,6 +63,15 @@ class AllChatCollectionViewCell: UICollectionViewCell {
         lastMessage.rightToLeft(of: lastMessageTime, offset: -5)
         
         line.edgesToSuperview(excluding: .top)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+
+        photoView.isUserInteractionEnabled = true
+        photoView.addGestureRecognizer(tapGesture)
+
+    }
+ 
+    @objc func imageTapped() {
+        handler?()
     }
     
 }

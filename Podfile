@@ -19,6 +19,7 @@ target 'TaGOnrog' do
   pod 'FirebaseFirestore'
   pod 'FirebaseAnalytics'
   pod 'GoogleSignIn'
+  pod 'AKAlertController', '~> 1.1.1'
 end
 
 post_install do |installer|

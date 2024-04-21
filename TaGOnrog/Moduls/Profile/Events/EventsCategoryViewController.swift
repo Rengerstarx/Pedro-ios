@@ -7,6 +7,7 @@
 
 import TinyConstraints
 import Combine
+import AKAlertController
 
 class EventsCategoryViewController: UIViewController {
     private let category: ([EventsCategoryItem], String)
@@ -129,6 +130,28 @@ extension EventsCategoryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return cellSpacing
+    }
+    
+}
+
+extension EventsCategoryViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alertController = AKAlertController(title: "Ваш комментарий", message: "Поделитесь впечатлениями о встрече", preferredStyle: .alert)
+        let handler: (AKAlertAction) -> Void = { action in print("\(action.title) pressed" )}
+
+        alertController.addAction(AKAlertAction(title: "Отправить", style: .default, handler: handler))
+        alertController.addAction(AKAlertAction(title: "Отменить", style: .destructive, handler: handler))
+
+        // add textfield
+        alertController.addTextFieldWithConfigurationHandler { textField in
+            textField?.placeholder = "Состоялась ли встреча?"
+        }
+        alertController.addTextFieldWithConfigurationHandler { textField in
+            textField?.placeholder = "Ваше мнение"
+        }
+
+        present(alertController, animated: true, completion: nil)
     }
     
 }
