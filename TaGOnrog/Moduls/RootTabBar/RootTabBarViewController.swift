@@ -29,6 +29,7 @@ class RootTabBarViewController: UITabBarController {
     
     private(set) var bannerHeight: CGFloat = 0
     private var bannerViewBottom: NSLayoutConstraint?
+    var man = Manager.shared
     
     private(set) var selectedTabBarItem = RootTabBarItem.dating
         
@@ -40,6 +41,9 @@ class RootTabBarViewController: UITabBarController {
         setupLayout()
         setupHandlers()
         selectTabBarItem(.dating)
+        man.hand = { result in
+            self.selectTabBarItem(.search)
+        }
     }
     
     func selectTabBarItem(_ tabBarItem: RootTabBarItem) {

@@ -28,46 +28,24 @@ class ChatViewModel {
     func sendMessage(_ message: String) {
         let sentMessage = ChatSentMessageCell(message: message)
         appendCell(.sentMessage(message: sentMessage))
+//        getMessage("окей, я свободна в этот понедельник")
+//        getMessage("можно будет погклять в 19-20 часов")
+//        appendCell(.sentMessage(message: ChatSentMessageCell(message: "Окау")))
         
-//        let request = chatCells.toRequest()
-        
-//        sendMessage(request: request) { [weak self] receivedMessage in
-//            self?.action.send(.appendCell(chatCell: .receivedMessage(message: .message(message: receivedMessage))))
-//        }
     }
     
     func getMessage(_ message: String) {
         let getMessage = ChatReceivedMessageCell(message: message)
         appendCell(.receivedMessage(message: getMessage))
         
-//        let request = chatCells.toRequest()
     }
     
-    // MARK: - Helpers
-    
-//    private func sendMessage(request: ChatAskQuestionRequest, successHandler: @escaping (ChatReceivedMessage) -> Void) {
-//        state.sendLoading = true
-//        let completion: () -> Void = { [weak self] in self?.state.sendLoading = false }
-//        
-//        
-//        
-//        chatProvider.askQuestion(request: request) { [weak self] result in
-//            switch result {
-//            case .success(let receivedMessage):
-//                completion()
-//                successHandler(receivedMessage)
-//            case .failure(let error):
-//                completion()
-//                self?.action.send(.error(error: error.localizedDescription))
-//            }
-//        }
-//        
-//    }
     
     private func appendGreetingCell() {
-        let text = "bebra"
+        let text = "Привет, давай знакомится!"
         let message = ChatReceivedMessageCell(message: text)
         let cell = ChatTableCell.receivedMessage(message: message)
+//        sendMessage("Ну можно будет завтра пересечься")
         appendCell(cell)
     }
     

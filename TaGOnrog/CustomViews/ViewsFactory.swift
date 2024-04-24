@@ -34,13 +34,15 @@ class ViewsFactory {
         textColor: UIColor = .appBlack,
         font: UIFont = .sFProText(ofSize: 17),
         alignment: NSTextAlignment = .natural,
-        adjustFont: Bool = false
+        adjustFont: Bool = false,
+        alpha: CGFloat = 1.0
     ) -> UILabel {
         let label = UILabel()
         label.numberOfLines = lines
         label.textColor = textColor
         label.font = font
         label.textAlignment = alignment
+        label.alpha = alpha
         if adjustFont {
             label.adjustsFontSizeToFitWidth = true
             label.minimumScaleFactor = 0.5
@@ -128,6 +130,17 @@ class ViewsFactory {
             font: .sFProTextSemibold(ofSize: 20),
             titleColor: .appWhite
         )
+    }
+    
+    class func tagView(color: UIColor, text: String) -> UIView {
+        let view = UIView()
+        view.layer.cornerRadius = 3
+        view.backgroundColor = color
+        let lable = ViewsFactory.defaultLabel(lines: 1, textColor: .appBlack, font: .sFProTextBold(ofSize: 12))
+        view.addSubview(lable)
+        lable.text = text
+        lable.edgesToSuperview(insets: .uniform(5))
+        return view
     }
     
 }

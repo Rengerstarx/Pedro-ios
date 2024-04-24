@@ -18,6 +18,8 @@ class DatingCardView: SwipeCard {
     private let aboutMeTitle = ViewsFactory.defaultLabel(textColor: .appBlack, font: .sFProTextBold(ofSize: 24))
     private let line = ViewsFactory.separatorLine(color: .hexFFDD00, vertical: false, thickness: 1)
     private let line2 = ViewsFactory.separatorLine(color: .hexFFDD00, vertical: false, thickness: 1)
+    private let tagsView = ViewsFactory.defaultStackView(axis: .horizontal, spacing: 5, alignment: .leading)
+    private let tagsView2 = ViewsFactory.defaultStackView(axis: .horizontal, spacing: 5, alignment: .leading)
     
     private let imageLike = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit, image: AppImage.likeImageMatch.uiImage)
     private let imageDislike = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit, image: AppImage.dislikeImageMatch.uiImage)
@@ -33,6 +35,29 @@ class DatingCardView: SwipeCard {
     private func setupViews(model: DatingModel) {
         aboutMeLabel.text = model.aboutMe
         aboutMeTitle.text = "Обо мне:"
+        stackView.contentMode = .left
+        var i = 0
+        while i < 3 {
+            if i < model.tags.count {
+                let tag = model.tags[i]
+                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag)
+                tagElement.height(25)
+                tagsView.addArrangedSubview(tagElement)
+            }
+            i += 1
+        }
+        while i < 7 {
+            if i < model.tags.count {
+                let tag = model.tags[i]
+                let tagElement = ViewsFactory.tagView(color: .hexFFDD00, text: tag)
+                tagElement.height(25)
+                tagsView2.addArrangedSubview(tagElement)
+            }
+            i += 1
+        }
+        
+        tagsView.sizeToFit()
+        tagsView2.sizeToFit()
         
         cardContent.backgroundColor = .appWhite
         cardContent.layer.borderColor = UIColor.hexFFDD00.cgColor
@@ -55,7 +80,7 @@ class DatingCardView: SwipeCard {
     
     private func setupLayouts() {
         [aboutMeTitle, line, aboutMeLabel, line2].forEach { stackView.addArrangedSubview($0) }
-        [stackView, imageLike, imageDislike].forEach { addSubview($0) }
+        [stackView, imageLike, imageDislike, tagsView, tagsView2].forEach { addSubview($0) }
         
         stackView.edgesToSuperview(excluding: .bottom, insets: .uniform(14))
         imageLike.leftToSuperview(offset: 20)
@@ -63,6 +88,13 @@ class DatingCardView: SwipeCard {
         
         imageLike.bottomToSuperview(offset: -20)
         imageDislike.bottomToSuperview(offset: -20)
+        
+        tagsView.topToBottom(of: stackView, offset: 10)
+        tagsView.leftToSuperview(offset: 20)
+        tagsView.rightToSuperview(offset: -20)
+        
+        tagsView2.topToBottom(of: tagsView, offset: 5)
+        tagsView2.leadingToSuperview(offset: 20)
     }
     
     private func setupSwipeSettings() {
