@@ -37,8 +37,11 @@ class AllChatsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let data = UserDefaults.standard.data(forKey: "bump") {
-            if let chatModel = try? PropertyListDecoder().decode(ChatModel.self, from: data) {
-                print(chatModel)
+            if let chatModel = try? JSONDecoder().decode(ChatModel.self, from: data) {
+                let controller = ChatViewController()
+                controller.setTitles(model: chatModel)
+                navigationController?.pushViewController(controller, animated: true)
+                UserDefaults.standard.removeObject(forKey: "bump")
 
             }
         }

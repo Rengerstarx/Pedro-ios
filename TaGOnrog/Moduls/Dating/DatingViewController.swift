@@ -13,61 +13,26 @@ class DatingViewController: UIViewController {
     
     private let datingView = DatingView()
     private let backImageView = ViewsFactory.defaultImageView(contentMode: .scaleToFill, image: AppImage.fon.uiImage)
-    
+    let vc = BumpViewControler()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        ap()
-//        datingView.hand = { result in
-//            self.ap()
-//        }
-//        let viewController = BumpViewControler()
-//        viewController.handler = {
-//            viewController.dismiss(animated: false)
-//            let m = ChatModel(name: "Даня", photo: URL(string: "https://sun156-2.userapi.com/s/v1/if2/ENldKlFrgeF4LMIWb_ZnkGoF8x5_eeL1XNF61VBSISnUqESpz5X0Ib4KykS7nIHLHQIW9hFqaMme2fpa96cdFR5I.jpg?quality=95&crop=869,28,1358,1358&as=50x50,100x100,200x200,400x400&ava=1&u=21ldmwftnfjfAuIZ9sIt3TLPpFpS8P4bb-tk_pIcyvE&cs=400x400")!, lastMessageText: "", lastMessageTimeText: "")
-//
-//            Manager.shared.open(m: m)
-//            UserDefaults.standard.set(try? PropertyListEncoder().encode(m), forKey: "bump")
-//        }
-//        viewController.modalPresentationStyle = .fullScreen
-//        viewController.setup([AppImage.skuf1.uiImage, AppImage.skuf2.uiImage])
-//        present(viewController, animated: false, completion: nil)
-//        if let savedValue = UserDefaults.standard.object(forKey: "regComplite") as? Bool {
-//            if let tokenValue = UserDefaults.standard.object(forKey: "token") as? String {
-//                if let url = URL(string: "http://89.208.104.224:8000/api/recommendations/match") {
-//                    let headers: HTTPHeaders = [
-//                        "x-Authorization": "Bearer \(tokenValue)",
-//                        "Content-Type": "application/json"
-//                    ]
-//                    
-//                    AF.request(url, method: .get, headers: headers).responseJSON { response in
-//                        switch response.result {
-//                        case .success(let value):
-//                            do {
-//                                let welcome = try JSONDecoder().decode(Match.self, from: value as? Data ?? Data())
-//                                
-//                            } catch {
-//                                print("Error decoding JSON: \(error)")
-//                            }
-//                        case .failure(let error):
-//                            print("Something went wrong: \(error.localizedDescription)")
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
-//            let viewController = RegistrationViewController()
-//            viewController.modalPresentationStyle = .fullScreen
-////            viewController.setup([AppImage.skuf1.uiImage, AppImage.skuf2.uiImage])
-//            present(viewController, animated: true, completion: nil)
-//        }
+        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0MjkwMDczLCJpYXQiOjE3MTM2ODUyNzMsImp0aSI6ImZjODUyMzc0MjQ0MTRiNWVhM2Y2N2FkYzk1MDdmNTQyIiwidXNlcl9pZCI6Mn0.s6wu1ib6QCLWxo7y3irA4EEoNFDtrZqbpth6Hwh778U", forKey: "token")
+        UserDefaults.standard.set(5, forKey: "mes")
+        
+        datingView.hand = { result in
+            self.ap()
+        }
         setTitles()
         setupViews()
         setupLayouts()
+        
+
     }
     
     func ap() {
         if let tokenValue = UserDefaults.standard.object(forKey: "token") as? String {
-            if let url = URL(string: "http://89.208.104.224:8000/api/recommendations/match/21/") {
+            if let url = URL(string: "http://89.208.104.224:8000/api/recommendations/match/22/") {
                 let headers: HTTPHeaders = [
                     "x-Authorization": "Bearer \(tokenValue)",
                     "Content-Type": "application/json"
@@ -81,7 +46,6 @@ class DatingViewController: UIViewController {
                     case .success(let value):
                         do {
                             let welcome = try JSONDecoder().decode(Mmmm.self, from: value as? Data ?? Data())
-                            let t = 1
                         } catch {
                             print("Error decoding JSON: \(error)")
                         }

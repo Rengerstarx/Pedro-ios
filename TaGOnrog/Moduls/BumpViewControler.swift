@@ -7,11 +7,12 @@
 
 import UIKit
 import TinyConstraints
+import SDWebImage
 
 class BumpViewControler: UIViewController {
     
-    private let imageOne = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit)
-    private let imageTwo = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit)
+    private let imageOne = ViewsFactory.defaultImageView(contentMode: .redraw)
+    private let imageTwo = ViewsFactory.defaultImageView(contentMode: .redraw)
     private let continueButton = ViewsFactory.continueButton()
     private let imageLike1 = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit)
     private let imageLike2 = ViewsFactory.defaultImageView(contentMode: .scaleAspectFit)
@@ -25,9 +26,9 @@ class BumpViewControler: UIViewController {
         setupLayouts()
     }
     
-    func setup(_ images: [UIImage?]) {
-        imageOne.image = images[0]
-        imageTwo.image = images[1]
+    func setup(_ images: [URL]) {
+        imageOne.sd_setImage(with: images[0])
+        imageTwo.sd_setImage(with: images[1])
         imageLike1.image = AppImage.like.uiImage
         imageLike2.image = AppImage.like.uiImage
     }

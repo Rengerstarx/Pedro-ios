@@ -17,7 +17,7 @@ class DatingView: UIView, SwipeCardStackDataSource, SwipeCardStackDelegate {
     var hand: ((Int) -> Void)?
     
     var cardsList: [DatingModel] = [
-        DatingModel(aboutMe: "Привет! Я Александра, 28-летняя писательница и путешественница.", tags: ["путешествия", "дорога", "приключения", "туризм", "туса", "поход", "мир"]),
+        DatingModel(aboutMe: "Привет! Я обожаю фильмы.", tags: ["баскетбол", "фильмы", "приключения", "туризм", "туса", "поход", "мир"]),
         DatingModel(aboutMe: "Привет! Меня зовут Максим", tags: ["32131", "33", "fddsvvds"]),
         DatingModel(aboutMe: "Привет! Меня зовут Екатерина, и я - профессиональный фотограф. Моя страсть к фотографии началась в детстве, когда я получила свою первую камеру.", tags: ["32131", "33", "fddsvvds"]),
         DatingModel(aboutMe: "Привет! Я Дмитрий, амбициозный предприниматель и путешественник. Я всегда мечтал создать собственный бизнес, и сейчас я владею несколькими успешными компаниями в разных отраслях.", tags: ["32131", "33", "fddsvvds"]),
@@ -55,9 +55,16 @@ class DatingView: UIView, SwipeCardStackDataSource, SwipeCardStackDelegate {
         return card
     }
     
-    func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
+    func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
         hand?(index)
     }
+    
+    func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
+        hand?(index)
+    }
+//    func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
+//        hand?(index)
+//    }
     
     func numberOfCards(in cardStack: SwipeCardStack) -> Int {
         return cardsList.count

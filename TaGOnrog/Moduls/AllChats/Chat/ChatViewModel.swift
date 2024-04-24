@@ -28,9 +28,9 @@ class ChatViewModel {
     func sendMessage(_ message: String) {
         let sentMessage = ChatSentMessageCell(message: message)
         appendCell(.sentMessage(message: sentMessage))
-        getMessage("окей, я свободна в этот понедельник")
-        getMessage("можно будет погклять в 19-20 часов")
-        appendCell(.sentMessage(message: ChatSentMessageCell(message: "Окау")))
+//        getMessage("окей, я свободна в этот понедельник")
+//        getMessage("можно будет погклять в 19-20 часов")
+//        appendCell(.sentMessage(message: ChatSentMessageCell(message: "Окау")))
         
     }
     
@@ -42,10 +42,10 @@ class ChatViewModel {
     
     
     private func appendGreetingCell() {
-        let text = "До завтра"
+        let text = "Привет, давай знакомится!"
         let message = ChatReceivedMessageCell(message: text)
         let cell = ChatTableCell.receivedMessage(message: message)
-        sendMessage("Ну можно будет завтра пересечься")
+//        sendMessage("Ну можно будет завтра пересечься")
         appendCell(cell)
     }
     

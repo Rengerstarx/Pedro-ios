@@ -1,9 +1,3 @@
-//
-//  Mes.swift
-//  TaGOnrog
-//
-//  Created by Сергей Бекезин on 21.04.2024.
-//
 
 import Foundation
 
@@ -11,18 +5,20 @@ import Foundation
 struct Mes: Codable {
     let count: Int?
     let next, previous: String?
-    let results: [Result?]
+    let results: [Resultut?]
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Resultut: Codable {
     let id: Int?
     let name: String?
     let lastMessage: LastMessage?
+    let participants: [Author?]
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case lastMessage = "last_message"
+        case participants
     }
 }
 
@@ -31,6 +27,7 @@ struct LastMessage: Codable {
     let id: Int?
     let text: String?
     let author: Author?
+    let created: String?
 }
 
 // MARK: - Author
@@ -39,8 +36,8 @@ struct Author: Codable {
     let username, email, firstName, lastName: String?
     let avatar, birthDate: String?
     let ages: Int?
-    let timePreference: String?
-    let groups, tags: [Position]
+    let timePreference, about: String?
+    let groups, tags: [Position?]
     let position: Position?
 
     enum CodingKeys: String, CodingKey {
@@ -51,7 +48,6 @@ struct Author: Codable {
         case birthDate = "birth_date"
         case ages
         case timePreference = "time_preference"
-        case groups, tags, position
+        case about, groups, tags, position
     }
 }
-
